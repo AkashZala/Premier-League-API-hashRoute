@@ -2,16 +2,19 @@
     box-sizing: border-box;
 }
 body {
+    background-image: url(https://www.thesportsdb.com/images/media/league/fanart/30xym81619948109.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
     background-color: rgb(62, 22, 73);
     color: whitesmoke;
-    text-shadow: 1px 1px 3px black;
     font-family: 'Trebuchet MS';
     
 }
 
-.selected {
-    background-color: rgb(62, 22, 73);
+.selected>p {
     color: whitesmoke;
+    border-bottom: 1px whitesmoke;
 }
 
 
@@ -20,6 +23,44 @@ body {
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 75px;
+    width: 60px;
 }
 
+.teamBadge {
+    height: 25px;
+    margin-right: 3px;
+    margin-left: 5px;
+}
+
+.list {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.408);
+    position: relative;
+    left: 0;
+    right: 0;
+    box-shadow: 1px 1px 5px white;
+}
+
+.list>a {
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 0;
+    min-width: fit-content;
+    width: calc(100% / 5);
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list>a:hover {
+    padding: .5rem;
+    background-color: whitesmoke;
+    color: rgb(50, 2, 95);
+    box-shadow: 1px 1px 3px black;
+    transition: .5s;
+    border-radius: .5rem;
+}
