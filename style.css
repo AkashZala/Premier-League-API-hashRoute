@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(62, 22, 73);
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
+    font-family: 'Trebuchet MS';
+    
+}
+
+.selected {
+    background-color: rgb(62, 22, 73);
+    color: whitesmoke;
+}
+
+
+#headLogo > img {
+    float: right;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 75px;
+}
+
