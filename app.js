@@ -1,5 +1,5 @@
 const list = document.querySelector('.list');
-const head = document.getElementById('headLogo');
+const info = document.getElementById('info');
 const details = document.getElementById('details');
 
 state = {
@@ -22,35 +22,43 @@ function renderTeams() {
     const hash = window.location.hash.slice(1);
     const toHtml = state.teamsList.map((team) => {
         return `
-            <a class='${team.idTeam === hash ? "selected" : ''}' href='#${team.idTeam === hash ? "" : team.idTeam}'>
-            <img class='teamBadge' src='${team.strTeamBadge}'/> <p>${team.strTeam}</p>
+            <a class='${team.idTeam === hash ? "selected" : ''}' 
+            href='#${team.idTeam === hash ? "" : team.idTeam}' 
+            style="background-color: ${team.idTeam === hash ? team.strKitColour1.replaceAll('"', "") : 'none'}">
+            <img class='teamBadge' src='${team.strTeamBadge}'/> ${team.strTeam}
             </a>
         `
-        
     }).join('');
-    
 
     list.innerHTML = toHtml;
-    
+    info.innerHTML = `<p>Click A Team For More Information!</p>`
+
     state.team = state.teamsList.find(team => team.idTeam === hash);
-    
+
     if (state.team) {
         details.innerHTML = `
-            <p>${state.team.strTeam}</p>
+        <div class="container" style="background-color: ${state.team.strKitColour1.replaceAll('"', "")}BF; border: 5px solid ${state.team.strKitColour2.replaceAll('"', "")}">
+            <img id="banner" src=${state.team.strTeamBanner} />
+            <div id="head">
+                <h1>${state.team.strTeam}</h1>
+                <h3>${state.team.strKeywords}</h3>
+            </div>
+            <div id='rowTwo'>
+                <img id='logo' src=${state.team.strTeamBadge} />
+                <div id='rowTwoText'>
+                    <p>${state.team.strAlternate}</p>
+                    <p>Founded: ${state.team.intFormedYear}</p>
+                    <p>Stadium: ${state.team.strStadium} (${state.team.strStadiumLocation})</p>
+                </div>
+            </div>
+            <img id='stadium' src=${state.team.strStadiumThumb} />
+            <p>${state.team.strDescriptionEN}</p>
+        </div>
         `
+        info.innerHTML = '';
     } else {
-        details.innerHTML ='';
+        details.innerHTML = '';
     }
-    
 }
-    
-
-
-function renderSelected() {
-    details.innerHTML = `
-        <p>${state.team.strTeam}</p>
-    `
-}
-
 
 getData();
