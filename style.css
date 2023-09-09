@@ -18,6 +18,10 @@ body>h1 {
     max-width: calc(100% - 80px);
 }
 
+hr {
+    margin-bottom: 0;
+}
+
 #headLogo>img {
     float: right;
     position: fixed;
@@ -156,10 +160,6 @@ body>h1 {
 
     .list>a {
         width: calc(100%/2 - 2rem);
-    }
-
-    #info {
-        margin-top: 35%;
     }
 
     }
