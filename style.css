@@ -61,7 +61,7 @@ hr {
 }
 
 .list>a:hover {
-    padding: .5rem;
+    padding: .2rem;
     background-color: whitesmoke;
     color: rgb(50, 2, 95);
     box-shadow: 1px 1px 3px black;
@@ -77,8 +77,8 @@ hr {
 
 }
 
-.selected:hover {
-    color: rgb(50, 2, 95);
+.selected>:hover {
+    color: whitesmoke;
     border-bottom: 1px whitesmoke;
 }
 
@@ -161,5 +161,6 @@ hr {
     .list>a {
         width: calc(100%/2 - 2rem);
     }
+
 
     }
